@@ -10,15 +10,10 @@ import Foundation
 
 struct Locations : Decodable, Identifiable {
     var id: Int
+    var name: String
     var region: String
-    var content : [Content]
+    var commercial, dsn, email, website: String
+    
 
 }
-struct Content: Decodable, Identifiable {
-    var id: Int
-    var name: String
-    var Commercial: String
-    var DSN: String
-    var email: String
-    var website: String
-}
+

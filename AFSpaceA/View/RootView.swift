@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct RootView: View {
-    @EnvironmentObject var base:ContentModel
+    @EnvironmentObject var base: ContentModel
+    
     var body: some View {
         ScrollView {
-            LazyVStack {
-                ForEach(base.locations) { base in
-                    Text(base.region)
-                }
+           
+            // Put in place to start text farther down visibly
+            Rectangle()
+                .frame(width: 100, height: 100)
+            
+            ForEach(base.bases) { base in
+                Text(base.name)
             }
         }
+        CustomTabBar()
     }
     }
 
