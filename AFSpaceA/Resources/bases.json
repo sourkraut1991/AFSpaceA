@@ -1,0 +1,88 @@
+[{
+    "id": 0,
+    "region": "EUCOM",
+    "content": [{
+            "id": 0,
+            "name": "AVIANO AB, ITALY",
+            "Commercial": " 011-039-0434-03-7680",
+            "DSN": "(312) 632-7680",
+            "email": " AvianoSpaceA@us.af.mil",
+            "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/Aviano-AB-Passenger-Terminal/"
+        },
+
+        {
+            "id": 1,
+            "name": "INCIRLIK AB, TURKEY",
+            "Commercial": "90-322-316-6425/6001",
+            "DSN": " (314) 676-6425/6001",
+            "email": " 728AMS.SpaceA.SignUp@us.af.mil",
+            "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/Incirlik-AB-Passenger-Terminal/"
+        },
+        {
+            "id": 2,
+
+            "name": "LAJES FIELD AB, PORTUGAL",
+            "Commercial": "011-351-295-57-3961/3227",
+            "DSN": "(314) 535-3227-3961/3227",
+            "email": "721APS.OL-A.1@us.af.mil",
+            "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/Lajes-Field-AB-Passenger-Terminal/"
+        },
+        {
+            "id": 3,
+            "name": "NAS ROTA, SPAIN",
+            "Commercial": "34-95-682-2411",
+            "DSN": "(314) 727-2411/2171",
+            "email": "spacearota@eu.navy.mil",
+            "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/Navsta-Rota-Passenger-Terminal/"
+        },
+        {
+            "id": 4,
+
+            "name": "NAS SIGONELLA, ITALY",
+            "Commercial": "39-095-86-5576/6725",
+            "DSN": "(314) 624-5576/6725",
+            "email": "spaceasiz@eu.navy.mil",
+            "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/Sigonella-NAS-Passenger-Terminal/"
+        },
+        {
+            "id": 5,
+            "name": "NSA NAPLES, ITALY",
+            "Commercial": "011-39-81-568-5283/5369",
+            "DSN": "(314) 626-5283/5396",
+            "email": "spacea.naples.it@eu.navy.mil",
+            "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/NSA-Naples-Passenger-Terminal/"
+        },
+        {
+            "id": 6,
+            "name": "NSA SOUDA BAY, CRETE, GREECE",
+            "Commercial": "011-30-282102-1275/1383",
+            "DSN": " (314) 266-1275/1383",
+            "email": " spaceasoudabay@eu.navy.mil",
+            "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/NSA-Souda-Bay-Passenger-Terminal/"
+        },
+        {
+            "id": 7,
+            "name": "RAF MILDENHALL, UK",
+            "Commercial": "01638-54-2248",
+            "DSN": " (314) 238-2248",
+            "email": " 727ams.spacea@us.af.mil",
+            "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/RAF-Mildenhall-Passenger-Terminal/"
+        },
+        {
+            "id": 8,
+            "name": "Ramstein AB, Germany",
+            "Commercial": "06371-46-4441",
+            "DSN": "(314) 479-4441",
+            "email": "721aps.ramstein.spaceasignup@us.af.mil",
+            "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/Ramstein-AB-Passenger-Terminal/"
+        },
+        {
+            "id": 9,
+            "name": "SPANGDAHLEM AB, GERMANY",
+            "Commercial": " 011-49-6565-61-8866",
+            "DSN": "(314) 452-8866",
+            "email": "726ams.trp@us.af.mil",
+            "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/Spangdahlem-AB-Passenger-Terminal/"
+        }
+    ]
+}]
