@@ -9,9 +9,6 @@ import Foundation
 
 class ContentModel: ObservableObject {
     @Published var bases = [Locations]()
-    
-   
-    
     init() {
         
         getLocalData()

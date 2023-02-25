@@ -12,7 +12,10 @@ struct Locations : Decodable, Identifiable {
     var id: Int
     var name: String
     var region: String
-    var commercial, dsn, email, website: String
+    var commercial: String
+    var dsn: String
+    var email: String
+    var website: String
     
 
 }
