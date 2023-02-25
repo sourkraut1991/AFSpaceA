@@ -9,6 +9,7 @@ import Foundation
 
 class ContentModel: ObservableObject {
     @Published var bases = [Locations]()
+  
     init() {
         
         getLocalData()
@@ -28,9 +29,10 @@ class ContentModel: ObservableObject {
             // Try to decode the json into an array of modules
             let jsonDecoder = JSONDecoder()
             let bases = try jsonDecoder.decode([Locations].self, from: jsonData)
-            
+         
             // Assign parsed locations to locations property if successfully parsed
             self.bases = bases
+            
             
         } catch {
             // TODO: log error

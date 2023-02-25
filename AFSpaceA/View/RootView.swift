@@ -10,7 +10,10 @@ import SwiftUI
 struct RootView: View {
     @EnvironmentObject var base: ContentModel
     
+ 
+    
     var body: some View {
+    
         ScrollView {
            
             // Put in place to start text farther down visibly
@@ -18,6 +21,7 @@ struct RootView: View {
                 .frame(width: 100, height: 100)
             
             ForEach(base.bases) { base in
+                Text(base.region)
                 Text(base.name)
             }
         }

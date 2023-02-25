@@ -12,8 +12,8 @@ struct Locations : Decodable, Identifiable {
     var id: Int
     var name: String
     var region: String
-    var commercial: String
-    var dsn: String
+    var Commercial: String
+    var DSN: String
     var email: String
     var website: String
     
