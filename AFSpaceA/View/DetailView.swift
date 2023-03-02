@@ -16,28 +16,41 @@ struct DetailView: View {
         
         // If no meditation set, can't display detail
         if let base = base  {
-        
-            VStack(alignment: .leading, spacing: 20.0) {
-               
-                
-                // Base name
-                Text(base.name)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-
-              
-                Text("DSN: " + base.DSN)
-                Text("Commercial: " + base.Commercial)
-              
-                //TODO: Fix Email and email links
-                Text("Email: " + base.email)
-                Text("Website: " + base.website)
-                
             
-                Spacer()
+            VStack {
+                //        TODO: Fix why the filter doesn't work
                 
-            }.padding()
+                ZStack {
+                    // Background Image
+                    Image(base.image ?? "")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .cornerRadius(30)
+                    
+                    // Text Stack
+                    
+                    // Base name
+                    Text(base.name)
+                        .foregroundColor(.white)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                }
+                .padding(.bottom, -10)
+                List {
+                    Text("DSN: " + base.DSN)
+                    Text("Commercial: " + base.Commercial)
+                    
+                    //TODO: Fix Email and email links
+                    Text("Email: " + base.email)
+                    Text("Website: " + base.website)
+                    
+                }
+            }
+                    Spacer()
+                    
+                }
+          
+            }
         }
-    }
-}
+    
 

@@ -102,10 +102,161 @@
     },
     {
         "id": 10,
-        "name": "Ramstein AB, Germany111111",
+        "image": "Baltimore",
+        "name": "BALTIMORE-WASHINGTON INT'L (BWI), MD",
         "region": "CONUS",
-        "Commercial": "06371-46-4441",
-        "DSN": "(314) 479-4441",
-        "email": "721aps.ramstein.spaceasignup@us.af.mil",
-        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/Ramstein-AB-Passenger-Terminal/"
+        "Commercial": "(609) 253-8825",
+        "DSN": "(312) 568-8825",
+        "email": "bwipax@us.af.mil",
+        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Baltimore-Washington-International-Airport-Passenger-Terminal/"
+    },
+    {
+        "id": 11,
+        "image": "Dover",
+        "name": "DOVER AFB, DE",
+        "region": "CONUS",
+        "Commercial": "(302) 677-4088 / 2854",
+        "DSN": "(312) 445-4088 / 2854",
+        "email": "436aps.spacea@us.af.mil",
+        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Dover-AFB-Passenger-Terminal/"
+    },
+    {
+        "id": 12,
+        "image": "Fairchild",
+        "name": "FAIRCHILD AFB, WA",
+        "region": "CONUS",
+        "Commercial": "(509) 247-3406",
+        "DSN": "(312) 657-3406",
+        "email": "92lrs.passenger@us.af.mil",
+        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Fairchild-AFB-Air-Transportation-Function/"
+    },
+    {
+        "id": 13,
+        "image": "Andrews",
+        "name": "JOINT BASE ANDREWS, MD",
+        "region": "CONUS",
+        "Commercial": "(301) 981-3604",
+        "DSN": "(312) 858-3604",
+        "email": "AMC.SPACEA@us.af.mil",
+        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Joint-Base-Andrews-Passenger-Terminal/"
+    },
+    {
+        "id": 14,
+        "image": "Charleston",
+        "name": "JOINT BASE CHARLESTON, SC",
+        "region": "CONUS",
+        "Commercial": "(843) 963-3048 / 3083",
+        "DSN": "(312) 673-3048 / 3083",
+        "email": "437APS.SPACEA@us.af.mil",
+        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Joint-Base-Charleston-Passenger-Terminal/"
+    },
+    {
+        "id": 15,
+        "image": "Mcchord",
+        "name": "JOINT BASE LEWIS-MCCHORD, WA",
+        "region": "CONUS",
+        "Commercial": "(253) 982-7259 / 7268",
+        "DSN": "(312) 382-7259",
+        "email": "eagle@us.af.mil",
+        "website": "https://www.mcchord.af.mil/About-Us/McChord-AMC-Passenger-Terminal/"
+    },
+    {
+        "id": 16,
+        "image": "Mcguire",
+        "name": "JOINT BASE MCGUIRE-DIX-LAKEHURST, NJ",
+        "region": "CONUS",
+        "Commercial": "(609) 754-5023 / 9950",
+        "DSN": "(312) 650-5023 / 9950",
+        "email": "305.APS.McGuire.SPACE.A@us.af.mil",
+        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Joint-Base-MDL-Passenger-Terminal/"
+    },
+    {
+        "id": 17,
+        "image": "Rock",
+        "name": "LITTLE ROCK AFB, AR",
+        "region": "CONUS",
+        "Commercial": "(501) 987-3118",
+        "DSN": "(312) 731-3118",
+        "email": "19LRS.LGRA.ATF@us.af.mil",
+        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Little-Rock-AFB-Passenger-Terminal/"
+    },
+    {
+        "id": 18,
+        "image": "Macdill",
+        "name": "MACDILL AFB, FL",
+        "region": "CONUS",
+        "Commercial": "(813) 828-2440",
+        "DSN": "(312) 968-2440",
+        "email": "SpaceA2@us.af.mil",
+        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/MacDill-AFB-Air-Transportation-Function/"
+    },
+    {
+        "id": 19,
+        "image": "Mcconnell",
+        "name": "MCCONNELL AFB, KS",
+        "region": "CONUS",
+        "Commercial": "(316) 759-4810 / 5404",
+        "DSN": "(312) 743-4810 / 5404",
+        "email": "space-a@us.af.mil",
+        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/McConnell-AFB-Air-Transportation-Function/"
+    },
+    {
+        "id": 20,
+        "image": "Jacksonville",
+        "name": "NAS JACKSONVILLE, FL",
+        "region": "CONUS",
+        "Commercial": "(904) 542-8159/3956",
+        "DSN": "(312) 942-8159/3956",
+        "email": "spaceajaxs@navy.mil",
+        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/Staging/NAS-Jacksonville-Passenger-Terminal/"
+    },
+    {
+        "id": 21,
+        "image": "Norfolk",
+        "name": "NS NORFOLK, VA",
+        "region": "CONUS",
+        "Commercial": "(757) 444-4118 / 4148",
+        "DSN": "(312) 564-4118 / 4148",
+        "email": "spacea@airtermnorva.navy.mil",
+        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/NS-Norfolk-Passenger-Terminal/"
+    },
+    {
+        "id": 22,
+        "image": "Dover",
+        "name": "FAIRCHILD AFB, WA",
+        "region": "CONUS",
+        "Commercial": "(509) 247-3406",
+        "DSN": "(312) 657-3406",
+        "email": "92lrs.passenger@us.af.mil",
+        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Fairchild-AFB-Air-Transportation-Function/"
+    },
+    {
+        "id": 23,
+        "image": "Dover",
+        "name": "FAIRCHILD AFB, WA",
+        "region": "CONUS",
+        "Commercial": "(509) 247-3406",
+        "DSN": "(312) 657-3406",
+        "email": "92lrs.passenger@us.af.mil",
+        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Fairchild-AFB-Air-Transportation-Function/"
+    },
+    {
+        "id": 24,
+        "image": "Dover",
+        "name": "FAIRCHILD AFB, WA",
+        "region": "CONUS",
+        "Commercial": "(509) 247-3406",
+        "DSN": "(312) 657-3406",
+        "email": "92lrs.passenger@us.af.mil",
+        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Fairchild-AFB-Air-Transportation-Function/"
+    },
+    {
+        "id": 25,
+        "image": "Dover",
+        "name": "FAIRCHILD AFB, WA",
+        "region": "CONUS",
+        "Commercial": "(509) 247-3406",
+        "DSN": "(312) 657-3406",
+        "email": "92lrs.passenger@us.af.mil",
+        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Fairchild-AFB-Air-Transportation-Function/"
     }]
