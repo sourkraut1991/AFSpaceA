@@ -16,27 +16,23 @@ struct RootView: View {
             NavigationView {
                 //            ForEach(base.bases) { a in
                 List(base.bases) { a in
-                    Section(header: Text("CONUS")){
-                        NavigationLink(a.name) {
-                            if a.region == "CONUS" {
+                    NavigationLink(a.name) {
+                        if a.region == "CONUS" {
                             
-                            }
+                            DetailView(base: a)
+                            
                         }
-                       
+                        else if a.region == "EUCOM" {
+                            
+                            DetailView(base: a)
                         }
-                    Section(header: Text("EUCOM")){
-                        NavigationLink(a.name) {
-                            if a.region == "EUCOM" {
-                            }
-                            }
-                        }
-                        
                     }
+                    
+                }
                 }
         }
     }
 }
-//                                      SHOWS CARDS OPTION
 //        // NavigationView to go to detail view
 //        NavigationView {
 //
