@@ -9,7 +9,7 @@ import SwiftUI
 import AVKit
 
 struct DetailView: View {
-    
+    let beginningURL = "https://sourkraut1991.github.io/AFSpaceA-images/images/"
     var base: Locations?
     @Environment(\.openURL) var openURL
     var body: some View {
@@ -22,13 +22,14 @@ struct DetailView: View {
                 
                 ZStack {
                     // Background Image
-                    Image(base.image ?? "")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(30)
-                    
-                    // Text Stack
-                    
+                    AsyncImage(url: URL(string: beginningURL + base.image + ".jpg")!) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .cornerRadius(30)
+                    } placeholder: {
+                        Image(systemName: "photo.fill")
+                    }       
                     // Base name
                     Text(base.name)
                         .foregroundColor(.white)
@@ -37,13 +38,11 @@ struct DetailView: View {
                 }
                 .padding(.bottom, -10)
                 List {
-                    Text("DSN: " + base.DSN)
-                    Text("Commercial: " + base.Commercial)
-                    
-                    //TODO: Fix Email and email links
-                    Text("Email: " + base.email)
-                    Text("Website: " + base.website)
-                    
+                    Text("tele:" + base.Commercial)
+//                    Link("DSN: ", destination: URL(string: "tele:" + base.DSN)!)
+                    Link("Commercial: ", destination: URL(string: "tele:" + base.Commercial)!)
+//                    Link("Email: ", destination: URL(string: "mailto:" + base.email)!)
+                    Link("Website: ", destination: URL(string: base.website)!)
                 }
             }
                     Spacer()
