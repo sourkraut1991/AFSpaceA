@@ -10,7 +10,7 @@ import Foundation
 
 struct Locations : Decodable, Identifiable {
     var id: Int?
-    var image: String?
+    var image: String
     var name: String
     var region: String
     var Commercial: String
