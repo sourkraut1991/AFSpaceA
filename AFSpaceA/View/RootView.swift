@@ -8,24 +8,40 @@
 import SwiftUI
 
 struct RootView: View {
-    @EnvironmentObject var base: ContentModel
     
- 
+    @ObservedObject var base = ContentModel()
     
     var body: some View {
-    
-        ScrollView {
-           
-            // Put in place to start text farther down visibly
-            Rectangle()
-                .frame(width: 100, height: 100)
+        
+        // NavigationView to go to detail view
+        NavigationView {
             
-            ForEach(base.bases) { base in
-                Text(base.region)
-                Text(base.name)
+            ScrollView {
+                
+                // VStack to group all the cards
+                VStack(alignment: .leading) {
+                    
+                    // Card for each base
+                    ForEach(base.bases) { a in
+                        
+                        // Link to detail view
+                        NavigationLink(
+                            destination: DetailView(base: a),
+                            label: {
+                                
+                                // Each base card in the scrollview
+                                CardView(base: a)
+                            })
+                        
+                    
+                        
+                    }
+                }
+                
             }
+           
+            .navigationBarTitle("Bases")
         }
         CustomTabBar()
     }
-    }
-
+}

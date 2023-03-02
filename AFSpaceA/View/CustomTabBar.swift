@@ -17,6 +17,7 @@ struct CustomTabBar: View {
             Spacer()
             Button {
            //Button's Action
+//                RootView()
             } label: {
                 
                 VStack (alignment: .center, spacing: 4) {
@@ -49,9 +50,7 @@ struct CustomTabBar: View {
                     }
            Spacer()
             Button {
-           //* Button's Action - Sign Up for Space-A
-                //https://www.amc.af.mil/AMC-Travel-Site/AMC-Space-Available-Travel-Page/Space-Available-Email-Sign-up-Form/
-                //*
+//          AboutView()
             } label: {
                 
                 VStack (alignment: .center, spacing: 4) {

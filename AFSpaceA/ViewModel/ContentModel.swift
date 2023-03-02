@@ -8,18 +8,17 @@
 import Foundation
 
 class ContentModel: ObservableObject {
+    
     @Published var bases = [Locations]()
-  
+    
     init() {
-        
-        getLocalData()
+        // Get bases from local JSON
+        self.bases = getLocalJson()
         
     }
-
-
-
-    func getLocalData() {
-        // Get a url to the json file
+    
+    func getLocalJson() -> [Locations] {
+        
         let jsonUrl = Bundle.main.url(forResource: "bases", withExtension: "json")
         // Read the file into a data object
         do {
@@ -38,5 +37,7 @@ class ContentModel: ObservableObject {
             // TODO: log error
             print("Couldn't parse local data")
         }
+   return bases
+        
     }
-}
+    }
