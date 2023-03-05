@@ -4,8 +4,8 @@
     "image": "Aviano",
     "name": "AVIANO AB, ITALY",
     "region": "EUCOM",
-    "Commercial": " 011-039-0434-03-7680",
-    "DSN": "(312) 632-7680",
+    "Commercial": "tele:0110390434037680",
+    "DSN": "tele:3126327680",
     "email": "AvianoSpaceA@us.af.mil",
     "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/Aviano-AB-Passenger-Terminal/"
 },
@@ -15,8 +15,8 @@
         "image": "Incirlik",
         "name": "INCIRLIK AB, TURKEY",
         "region": "EUCOM",
-        "Commercial": "90-322-316-6425/6001",
-        "DSN": " (314) 676-6425/6001",
+        "Commercial": "tele:903223166425/6001",
+        "DSN": " tele:3146766425/6001",
         "email": " 728AMS.SpaceA.SignUp@us.af.mil",
         "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/Incirlik-AB-Passenger-Terminal/"
     },
@@ -25,8 +25,8 @@
         "image": "LAJESFIELD",
         "name": "LAJES FIELD AB, PORTUGAL",
         "region": "EUCOM",
-        "Commercial": "011-351-295-57-3961/3227",
-        "DSN": "(314) 535-3227-3961/3227",
+        "Commercial": "tele:011351295573961/3227",
+        "DSN": "tele:31453532273961/3227",
         "email": "721APS.OL-A.1@us.af.mil",
         "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/Lajes-Field-AB-Passenger-Terminal/"
     },

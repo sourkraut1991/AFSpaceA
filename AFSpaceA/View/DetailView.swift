@@ -32,13 +32,13 @@ struct DetailView: View {
                 try! AttributedString(markdown: "Website:  [\(wb)](\(wb))")
             }
             var dsnLink: AttributedString {
-                try! AttributedString(markdown: "Telephone: [\(base.DSN) ](\(dsn))")
+                try! AttributedString(markdown: "DSN: [\(base.DSN) ](\(dsn))")
             }
             var commercialLink: AttributedString {
-                try! AttributedString(markdown: "Telephone: [\(base.Commercial)](\(comm))")
+                try! AttributedString(markdown: "Commercial: [\(base.Commercial)](\(comm))")
             }
             VStack {
-                //        TODO: Fix why the filter doesn't work
+                
                 
                 ZStack {
                     // Background Image

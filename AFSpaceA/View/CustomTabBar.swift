@@ -13,7 +13,7 @@ enum Tabs: Int {
 }
 
 struct CustomTabBar: View {
-    
+    @Binding var selectedTab: Tabs
     @Environment(\.openURL) var openURL
     
     var body: some View {
@@ -23,7 +23,7 @@ struct CustomTabBar: View {
             Spacer()
             Button {
                 //Button's Action
-                //                RootView()
+                selectedTab = .home
             } label: {
                 
                 VStack (alignment: .center, spacing: 4) {
@@ -56,7 +56,7 @@ struct CustomTabBar: View {
             }
             Spacer()
             Button {
-                //          AboutView()
+                selectedTab = .about
             } label: {
                 
                 VStack (alignment: .center, spacing: 4) {
@@ -77,8 +77,3 @@ struct CustomTabBar: View {
 }
 
 
-struct CustomTabBar_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomTabBar()
-    }
-}
