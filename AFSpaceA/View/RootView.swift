@@ -8,31 +8,56 @@
 import SwiftUI
 
 struct RootView: View {
+    private var eucome: [Locations] = Locations.eucomBases
+    private var conus: [Locations] = Locations.conusBases
     
     @ObservedObject var base = ContentModel()
     
     var body: some View {
         VStack {
-            NavigationView {
-                //            ForEach(base.bases) { a in
-                List(base.bases) { a in
-                    NavigationLink(a.name) {
-                        if a.region == "CONUS" {
-                            
-                            DetailView(base: a)
-                            
-                        }
-                        else if a.region == "EUCOM" {
-                            
-                            DetailView(base: a)
-                        }
+            NavigationStack {
+                
+                List(conus){ a in
+                    NavigationLink(a.name){
+                        DetailView(base: a)
                     }
-                    
+                    //                    List(eucome){ a in
+                    //                        NavigationLink(a.name){
+                    //                            DetailView(base: a)
+                    //                        }
+                    .navigationBarTitle("Regions")
                 }
-                }
+                
+            }
+            CustomTabBar()
+            
         }
+        
     }
+    
 }
+//    var bases = [
+//        Locations(Commercial: base.Commercial, DSN: base?.DSN, email: base.email, id: base.id, image: base.image, name: base.name, region: base?.region, website: base.website),
+//        Locations(Commercial: base.Commercial, DSN: base?.DSN, email: base.email, id: base.id, image: base.image, name: base.name, region: base?.region, website: base.website)
+//    ]
+//
+//    // Declare what you want!
+//    // You want an array of EUCOM bases.
+//    var eucomBases: [Locations] {
+//        bases.filter{$0.region == "EUCOM"} // <-- find region within your bases array
+//    }
+//
+//    // Declear what you want!
+//    // You want an array of CONUS bases.
+//    var conusBases: [Locations] {
+//        bases.filter{$0.region == "CONUS"} // same here.
+//    }
+
+//        }
+
+
+
+
 //        // NavigationView to go to detail view
 //        NavigationView {
 //
@@ -69,6 +94,6 @@ struct RootView: View {
 //
 //        }
 //
-////        CustomTabBar()
+
 //    }
 //

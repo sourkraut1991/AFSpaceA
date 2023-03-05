@@ -7,7 +7,13 @@
 
 import SwiftUI
 
+enum Tabs: Int {
+    case home = 0
+    case about = 1
+}
+
 struct CustomTabBar: View {
+    
     @Environment(\.openURL) var openURL
     
     var body: some View {
@@ -16,8 +22,8 @@ struct CustomTabBar: View {
             
             Spacer()
             Button {
-           //Button's Action
-//                RootView()
+                //Button's Action
+                //                RootView()
             } label: {
                 
                 VStack (alignment: .center, spacing: 4) {
@@ -31,26 +37,26 @@ struct CustomTabBar: View {
                 
             }
             Spacer()
-
-                
-                VStack (alignment: .center, spacing: 4) {
-                    Button {
-                   //Button's Action
-                        openURL(URL(string: "https://www.amc.af.mil/AMC-Travel-Site/AMC-Space-Available-Travel-Page/Space-Available-Email-Sign-up-Form/")!)
-                    } label: {
-                        
-                        VStack (alignment: .center, spacing: 4) {
-                            Image(systemName: "globe")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 32, height: 32)
-                            Text("Sign Up")
-                        }
+            
+            
+            VStack (alignment: .center, spacing: 4) {
+                Button {
+                    //Button's Action
+                    openURL(URL(string: "https://www.amc.af.mil/AMC-Travel-Site/AMC-Space-Available-Travel-Page/Space-Available-Email-Sign-up-Form/")!)
+                } label: {
+                    
+                    VStack (alignment: .center, spacing: 4) {
+                        Image(systemName: "globe")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 32, height: 32)
+                        Text("Sign Up")
                     }
-                    }
-           Spacer()
+                }
+            }
+            Spacer()
             Button {
-//          AboutView()
+                //          AboutView()
             } label: {
                 
                 VStack (alignment: .center, spacing: 4) {
@@ -62,7 +68,7 @@ struct CustomTabBar: View {
                     Text("About")
                 }
             }
-           Spacer()
+            Spacer()
         }
         .padding(.top)
         .background(Color.gray)

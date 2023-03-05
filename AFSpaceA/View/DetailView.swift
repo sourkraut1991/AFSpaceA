@@ -8,15 +8,35 @@
 import SwiftUI
 import AVKit
 
+
+
+
 struct DetailView: View {
     let beginningURL = "https://sourkraut1991.github.io/AFSpaceA-images/images/"
+    
     var base: Locations?
+    
+    
+    
+    
     @Environment(\.openURL) var openURL
     var body: some View {
         
         // If no meditation set, can't display detail
         if let base = base  {
+            let wb = "\(base.website)"
+            let dsn = "tele:" + base.DSN
+            let comm = "tele:\(base.Commercial)"
             
+            var webLink: AttributedString {
+                try! AttributedString(markdown: "Website:  [\(wb)](\(wb))")
+            }
+            var dsnLink: AttributedString {
+                try! AttributedString(markdown: "Telephone: [\(base.DSN) ](\(dsn))")
+            }
+            var commercialLink: AttributedString {
+                try! AttributedString(markdown: "Telephone: [\(base.Commercial)](\(comm))")
+            }
             VStack {
                 //        TODO: Fix why the filter doesn't work
                 
@@ -29,7 +49,7 @@ struct DetailView: View {
                             .cornerRadius(30)
                     } placeholder: {
                         Image(systemName: "photo.fill")
-                    }       
+                    }
                     // Base name
                     Text(base.name)
                         .foregroundColor(.white)
@@ -37,19 +57,25 @@ struct DetailView: View {
                         .fontWeight(.bold)
                 }
                 .padding(.bottom, -10)
+                
+                
                 List {
-                    Text("tele:" + base.Commercial)
-//                    Link("DSN: ", destination: URL(string: "tele:" + base.DSN)!)
-                    Link("Commercial: ", destination: URL(string: "tele:" + base.Commercial)!)
-//                    Link("Email: ", destination: URL(string: "mailto:" + base.email)!)
-                    Link("Website: ", destination: URL(string: base.website)!)
-                }
-            }
-                    Spacer()
+                    // TODO: Show Contact data of base
+                    
+                    Text(dsnLink)
+                    Text(commercialLink)
+                    Text(base.email)
+                    Text(webLink)
+                    
                     
                 }
-          
             }
+            
+            
         }
-    
+        
+        
+    }
+}
+
 

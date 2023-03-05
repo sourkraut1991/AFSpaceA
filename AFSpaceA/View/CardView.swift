@@ -11,7 +11,7 @@ import SwiftUI
 struct CardView: View {
     
     var base:Locations
-   
+    
     var body: some View {
         
         ZStack {
@@ -39,9 +39,9 @@ struct CardView: View {
             .shadow(color: .black, radius: 10, x: 2, y: 2)
             
         }
-               
-            }
-        }
         
-     
- 
+    }
+}
+
+
+

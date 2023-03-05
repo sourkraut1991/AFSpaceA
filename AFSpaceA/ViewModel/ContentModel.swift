@@ -9,15 +9,16 @@ import Foundation
 import SwiftUI
 
 class ContentModel: ObservableObject {
-    
+  
     @Published var bases = [Locations]()
+    private var regions: [Locations] = Locations.allBases
     
     init() {
         // Get bases from local JSON
         self.bases = getLocalJson()
-        
-    }
     
+    }
+
     func getLocalJson() -> [Locations] {
         
         let jsonUrl = Bundle.main.url(forResource: "bases", withExtension: "json")
@@ -41,4 +42,5 @@ class ContentModel: ObservableObject {
    return bases
         
     }
+    let beginningURL = "https://sourkraut1991.github.io/AFSpaceA-images/images/"
     }
