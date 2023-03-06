@@ -216,48 +216,48 @@
         "image": "Norfolk",
         "name": "NS NORFOLK, VA",
         "region": "CONUS",
-        "Commercial": "(757) 444-4118 / 4148",
+        "Commercial": "757-444-4118/4148",
         "DSN": "(312) 564-4118 / 4148",
         "email": "spacea@airtermnorva.navy.mil",
         "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/NS-Norfolk-Passenger-Terminal/"
     },
     {
         "id": 22,
-        "image": "Dover",
-        "name": "FAIRCHILD AFB, WA",
+        "image": "Pope",
+        "name": "POPE FIELD, NC",
         "region": "CONUS",
-        "Commercial": "(509) 247-3406",
-        "DSN": "(312) 657-3406",
-        "email": "92lrs.passenger@us.af.mil",
-        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Fairchild-AFB-Air-Transportation-Function/"
+        "Commercial": "910-394-6527/6525",
+        "DSN": "312-424-6527",
+        "email": "pope.space.a@us.af.mil",
+        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Pope-Army-Airfield-Passenger-Terminal/"
     },
     {
         "id": 23,
-        "image": "Dover",
-        "name": "FAIRCHILD AFB, WA",
+        "image": "Scott",
+        "name": "SCOTT AFB, IL",
         "region": "CONUS",
-        "Commercial": "(509) 247-3406",
-        "DSN": "(312) 657-3406",
-        "email": "92lrs.passenger@us.af.mil",
-        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Fairchild-AFB-Air-Transportation-Function/"
+        "Commercial": "618-256-307/1854",
+        "DSN": "312-576-3017/1854",
+        "email": "Scott.Spacea@us.af.mil",
+        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Scott-AFB-Air-Transportation-Function/"
     },
     {
         "id": 24,
-        "image": "Dover",
-        "name": "FAIRCHILD AFB, WA",
+        "image": "Seattle",
+        "name": "SEATTLE-TACOMA IAP, WA",
         "region": "CONUS",
-        "Commercial": "(509) 247-3406",
-        "DSN": "(312) 657-3406",
-        "email": "92lrs.passenger@us.af.mil",
-        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Fairchild-AFB-Air-Transportation-Function/"
+        "Commercial": "253-982-3504/0555",
+        "DSN": "312-382-3504/0555",
+        "email": "seattle.gateway@us.af.mil",
+        "website": "https://www.mcchord.af.mil/About-Us/AMC-Seattle-Gateway/"
     },
     {
         "id": 25,
-        "image": "Dover",
-        "name": "FAIRCHILD AFB, WA",
+        "image": "Travis",
+        "name": "TRAVIS AFB, CA",
         "region": "CONUS",
-        "Commercial": "(509) 247-3406",
-        "DSN": "(312) 657-3406",
-        "email": "92lrs.passenger@us.af.mil",
-        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Fairchild-AFB-Air-Transportation-Function/"
+        "Commercial": "707-424-5774 / 1854",
+        "DSN": "312-837-5774 / 1854",
+        "email": "60aps.SpaceA@us.af.mil",
+        "website": "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Travis-AFB-Passenger-Terminal/"
     }]
