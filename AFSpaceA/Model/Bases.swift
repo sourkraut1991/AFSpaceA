@@ -7,18 +7,35 @@
 
 import Foundation
 
+struct Currency: Codable, Identifiable {
+    var id = UUID()
+    let base: String
+    let result: Double
+    
+    enum CodingKeys: String, CodingKey {
+           case base = "base"
+           case result = "result"
+        }
+
+    
+        init(base: String, result: Double) {
+            self.base = base
+            self.result = result
+    }
+}
 
 struct Locations: Codable, Identifiable {
     
     // Generate samples
     static let allBases: [Locations] = Bundle.main.decode(file: "bases.json")
+    
     static let sampleBase: Locations = allBases[0]
     
-    static var regionLocations = ["AMC CONUS TERMINALS", "EUCOM TERMINALS", "INDOPACOM TERMINALS", "CENTCOM TERMINALS", "SOUTHCOM TERMINALS", "NON-AMC CONUS TERMINALS", "ANG & RESERVE TERMINALS"]
+//    var regionLocations = ["AMC CONUS TERMINALS", "EUCOM TERMINALS", "INDOPACOM TERMINALS", "CENTCOM TERMINALS", "SOUTHCOM TERMINALS", "NON-AMC CONUS TERMINALS", "ANG & RESERVE TERMINALS"]
     //// Declare what you want!
     //// You want an array of EUCOM bases.
     static var eucomBases: [Locations] {
-        Locations.allBases.filter{$0.region == "EUCOM"} // <-- find region within your bases array
+        Locations.allBases.filter{$0.name == "EUCOM"} // <-- find region within your bases array
     }
     //
     //// Declear what you want!
@@ -61,8 +78,10 @@ struct Locations: Codable, Identifiable {
     }
     
 }
+
 // Extension to decode JSON locally
 extension Bundle {
+    
     func decode<T: Decodable>(file: String) -> T {
         guard let url = self.url(forResource: file, withExtension: nil) else {
             fatalError("Could not find \(file) in bundle.")
@@ -80,12 +99,4 @@ extension Bundle {
         
         return loadedData
     }
-}
-
-
-// Turn your JSON into an array of Base objects.
-// Hint: It's now an array! It's not JSON anymore.
-// Want to make this auto-fill name in from json, right? As opposed to having to manually type each out.. defeats the point of json, right?
-
-//
-
+} // End Of Bundle Extension

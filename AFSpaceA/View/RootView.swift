@@ -25,6 +25,8 @@ struct RootView: View {
                     HomeView()
                 case .about:
                     AboutView()
+                case .money:
+                    MoneyHome()
                 }
                 
                 Spacer()

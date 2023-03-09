@@ -24,19 +24,18 @@ struct DetailView: View {
         
         // If no meditation set, can't display detail
         if let base = base  {
+            let em = "\(base.email)"
             let wb = "\(base.website)"
-            let dsn = "tele:" + base.DSN
-            let comm = "tele:\(base.Commercial)"
+           
             
             var webLink: AttributedString {
                 try! AttributedString(markdown: "Website:  [\(wb)](\(wb))")
             }
-            var dsnLink: AttributedString {
-                try! AttributedString(markdown: "DSN: [\(base.DSN) ](\(dsn))")
+            var emL: AttributedString {
+                try! AttributedString(markdown: "Website:  [\(em)](\(em))")
             }
-            var commercialLink: AttributedString {
-                try! AttributedString(markdown: "Commercial: [\(base.Commercial)](\(comm))")
-            }
+            
+        
             VStack {
                 
                 
@@ -62,9 +61,9 @@ struct DetailView: View {
                 List {
                     // TODO: Show Contact data of base
                     
-                    Text(dsnLink)
-                    Text(commercialLink)
-                    Text(base.email)
+                    Text(base.DSN)
+                    Text(base.Commercial)
+                    Text(emL)
                     Text(webLink)
                     
                     

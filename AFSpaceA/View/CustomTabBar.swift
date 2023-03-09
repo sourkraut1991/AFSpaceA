@@ -10,6 +10,7 @@ import SwiftUI
 enum Tabs: Int {
     case home = 0
     case about = 1
+    case money = 2
 }
 
 struct CustomTabBar: View {
@@ -67,6 +68,20 @@ struct CustomTabBar: View {
                     
                     Text("About")
                 }
+            }
+                Spacer()
+                Button {
+                    selectedTab = .money
+                } label: {
+                    
+                    VStack (alignment: .center, spacing: 4) {
+                        Image(systemName: "i.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 32, height: 32)
+                        
+                        Text("Currency Converter")
+                    }
             }
             Spacer()
         }
