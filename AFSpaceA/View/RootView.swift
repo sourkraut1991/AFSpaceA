@@ -8,12 +8,20 @@
 //
 
 import SwiftUI
+import WishKit
+
+//WishKit.configure(with: "48F301E6-9B7D-46C5-90A4-401F19643817")
 
 struct RootView: View {
+
+    
+    
+    
+    
+    
     
     @ObservedObject var base = ContentModel()
     @State var selectedTab: Tabs = .home
-    
     var body: some View {
         ZStack {
            
@@ -27,6 +35,8 @@ struct RootView: View {
                     AboutView()
                 case .money:
                     MoneyHome()
+//                case .wish:
+//                    WishListView()
                 }
                 
                 Spacer()

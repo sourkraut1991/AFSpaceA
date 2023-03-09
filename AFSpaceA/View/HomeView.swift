@@ -28,8 +28,7 @@ struct HomeView: View {
     var body: some View {
         VStack {
             NavigationView {
-                List(filteredLocations) { a in
-                    Text(a.name)
+                List(filteredLocations) { a in                
                     NavigationLink(
                         destination: DetailView(base: a),
                         label: { 

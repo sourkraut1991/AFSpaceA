@@ -11,6 +11,7 @@ enum Tabs: Int {
     case home = 0
     case about = 1
     case money = 2
+//    case wish = 3
 }
 
 struct CustomTabBar: View {
@@ -84,6 +85,20 @@ struct CustomTabBar: View {
                     }
             }
             Spacer()
+//            Button {
+//                selectedTab = .wish
+//            } label: {
+//                
+//                VStack (alignment: .center, spacing: 4) {
+//                    Image(systemName: "i.circle")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 32, height: 32)
+//                    
+//                    Text("Currency Converter")
+//                }
+//        }
+      
         }
         .padding(.top)
         .background(Color.gray)
