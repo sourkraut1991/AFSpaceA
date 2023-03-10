@@ -11,7 +11,7 @@ enum Tabs: Int {
     case home = 0
     case about = 1
     case money = 2
-//    case wish = 3
+    case wish = 3
 }
 
 struct CustomTabBar: View {
@@ -62,7 +62,7 @@ struct CustomTabBar: View {
             } label: {
                 
                 VStack (alignment: .center, spacing: 4) {
-                    Image(systemName: "i.circle")
+                    Image(systemName: "info.circle")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 32, height: 32)
@@ -76,28 +76,28 @@ struct CustomTabBar: View {
                 } label: {
                     
                     VStack (alignment: .center, spacing: 4) {
-                        Image(systemName: "i.circle")
+                        Image(systemName: "coloncurrencysign.circle")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 32, height: 32)
                         
-                        Text("Currency Converter")
+                        Text("Converter")
                     }
             }
             Spacer()
-//            Button {
-//                selectedTab = .wish
-//            } label: {
-//                
-//                VStack (alignment: .center, spacing: 4) {
-//                    Image(systemName: "i.circle")
-//                        .resizable()
-//                        .scaledToFit()
-//                        .frame(width: 32, height: 32)
-//                    
-//                    Text("Currency Converter")
-//                }
-//        }
+            Button {
+                selectedTab = .wish
+            } label: {
+                
+                VStack (alignment: .center, spacing: 4) {
+                    Image(systemName: "i.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 32, height: 32)
+                    
+                    Text("Wish's")
+                }
+        }
       
         }
         .padding(.top)

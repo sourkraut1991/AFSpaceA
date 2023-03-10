@@ -17,7 +17,9 @@ struct RootView: View {
     
     
     
-    
+    init() {
+        WishKit.configure(with: "48F301E6-9B7D-46C5-90A4-401F19643817")
+    }
     
     
     @ObservedObject var base = ContentModel()
@@ -35,8 +37,8 @@ struct RootView: View {
                     AboutView()
                 case .money:
                     MoneyHome()
-//                case .wish:
-//                    WishListView()
+                case .wish:
+                    WishListView()
                 }
                 
                 Spacer()

@@ -32,7 +32,7 @@ struct DetailView: View {
                 try! AttributedString(markdown: "Website:  [\(wb)](\(wb))")
             }
             var emL: AttributedString {
-                try! AttributedString(markdown: "Website:  [\(em)](\(em))")
+                try! AttributedString(markdown: "Email:  [\(em)](\(em))")
             }
             
         
@@ -61,8 +61,8 @@ struct DetailView: View {
                 List {
                     // TODO: Show Contact data of base
                     
-                    Text(base.DSN)
-                    Text(base.Commercial)
+                    Text("DSN: " + base.DSN)
+                    Text("Commercial: " + base.Commercial)
                     Text(emL)
                     Text(webLink)
                     
