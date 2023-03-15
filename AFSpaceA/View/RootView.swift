@@ -12,21 +12,18 @@ import WishKit
 
 struct RootView: View {
     @StateObject var vm = ContentModel()
-   @StateObject var base = ContentModel()
+    let weather: Forecast
+    @StateObject var base = ContentModel()
     @State var selectedTab: Tabs = .home
     
     @State var hasError = false
-   
+    
     var body: some View {
         ZStack {
-           
-            
-            VStack {
-                
+            VStack {                
                 switch selectedTab {
                 case .home:
-                    HomeView()
-                        
+                    HomeView(weather: Forecast(date: "", minF: 0, maxF: 0, summary: "", icon: ""))
                 case .about:
                     AboutView()
                 case .money:
@@ -37,9 +34,9 @@ struct RootView: View {
                 
                 Spacer()
                 
-                    CustomTabBar(selectedTab: $selectedTab)
+                CustomTabBar(selectedTab: $selectedTab)
                 
             }
-            }
+        }
     }
 }

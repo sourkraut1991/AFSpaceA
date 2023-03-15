@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class ContentModel: ObservableObject {
-    @Published var weather = [Weather]()
+    @Published var weather = [Forecast]()
     
     
     @Published var bases = [Locations]()
@@ -74,7 +74,7 @@ class ContentModel: ObservableObject {
                             decoder.keyDecodingStrategy = .convertFromSnakeCase // Handles properties that look like first_last to camel case (firstlast)
                             
                             if let data = data,
-                               let weather = try? decoder.decode([Weather].self, from: data) {
+                               let weather = try? decoder.decode([Forecast].self, from: data) {
                                 
                                 // TODO: Handle setting the data
                                 self?.weather = weather // weather being set

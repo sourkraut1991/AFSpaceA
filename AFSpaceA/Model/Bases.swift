@@ -37,6 +37,7 @@ struct Weather: Codable, Identifiable, Hashable {
 
 // MARK: - Forecast
 struct Forecast: Codable, Hashable, Identifiable {
+    
     let id = UUID()
     let date: String
     let minF: Int
@@ -49,62 +50,66 @@ struct Forecast: Codable, Hashable, Identifiable {
         case maxF = "max_f"
         case summary, icon
     }
-    
-}
-struct Locations: Codable, Identifiable {
-    
-    // Generate samples
-    static let allBases: [Locations] = Bundle.main.decode(file: "bases.json")
-    
-    static let sampleBase: Locations = allBases[0]
-    
-    //    var regionLocations = ["AMC CONUS TERMINALS", "EUCOM TERMINALS", "INDOPACOM TERMINALS", "CENTCOM TERMINALS", "SOUTHCOM TERMINALS", "NON-AMC CONUS TERMINALS", "ANG & RESERVE TERMINALS"]
-    //// Declare what you want!
-    //// You want an array of EUCOM bases.
-    static var eucomBases: [Locations] {
-        Locations.allBases.filter{$0.name == "EUCOM"} // <-- find region within your bases array
-    }
-    //
-    //// Declear what you want!
-    //// You want an array of CONUS bases.
-    static var conusBases: [Locations] {
-        Locations.allBases.filter{$0.region == "CONUS"} // same here.
-    }
-    
-    
-    enum CodingKeys: String, CodingKey, CaseIterable {
-        case Commercial
-        case DSN
-        case email
-        case id
-        case image
-        case name
-        case region
-        case website
-    }
-    
-    let Commercial: String
-    let DSN: String
-    let email: String
-    let id: Int
-    let image: String
-    let name: String
-    let region: String
-    let website: String
-    
-    init(Commercial: String, DSN: String, email: String, id: Int, image: String, name: String, region: String, website: String) {
-        self.Commercial = Commercial
-        self.DSN = DSN
-        self.email = email
-        self.id = id
-        self.image = image
-        self.name = name
-        self.region = region
-        self.website = website
+    init(date: String, minF: Int, maxF: Int, summary:String, icon: String) {
+        self.date = date
+        self.icon = icon
+        self.maxF = maxF
+        self.minF = minF
+        self.summary = summary
         
     }
-    
 }
+    struct Locations: Codable, Identifiable {
+        // Generate samples
+        static let allBases: [Locations] = Bundle.main.decode(file: "bases.json")
+        
+        static let sampleBase: Locations = allBases[0]
+        
+        //// You want an array of EUCOM bases.
+        static var eucomBases: [Locations] {
+            Locations.allBases.filter{$0.name == "EUCOM"} // <-- find region within your bases array
+        }
+        //
+        //// Declear what you want!
+        //// You want an array of CONUS bases.
+        static var conusBases: [Locations] {
+            Locations.allBases.filter{$0.region == "CONUS"} // same here.
+        }
+        
+        
+        enum CodingKeys: String, CodingKey, CaseIterable {
+            case Commercial
+            case DSN
+            case email
+            case id
+            case image
+            case name
+            case region
+            case website
+        }
+        
+        let Commercial: String
+        let DSN: String
+        let email: String
+        let id: Int
+        let image: String
+        let name: String
+        let region: String
+        let website: String
+        
+        init(Commercial: String, DSN: String, email: String, id: Int, image: String, name: String, region: String, website: String) {
+            self.Commercial = Commercial
+            self.DSN = DSN
+            self.email = email
+            self.id = id
+            self.image = image
+            self.name = name
+            self.region = region
+            self.website = website
+            
+        }
+        
+    }
 
 // Extension to decode JSON locally
 extension Bundle {

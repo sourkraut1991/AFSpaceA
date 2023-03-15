@@ -17,7 +17,7 @@ struct AFSpaceAApp: App {
     
     var body: some Scene {
         WindowGroup {
-            RootView()
+            RootView(weather: Forecast(date: "", minF: 0, maxF: 0, summary: "", icon: ""))
                 .environmentObject(ContentModel())
         }
     }

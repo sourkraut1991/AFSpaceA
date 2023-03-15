@@ -8,13 +8,12 @@ import SwiftUI
 
 struct HomeView: View {
     let weather: Forecast
-    //    private var eucom: [Locations] = Locations.eucomBases
-    //    private var conus: [Locations] = Locations.conusBases
-    private var allBases: [Locations] = Locations.allBases
     
-    @ObservedObject var base = ContentModel()
+    //For Search Bar
     @State private var searchText = ""
     
+    // Base locations
+    private var allBases: [Locations] = Locations.allBases
     var filteredLocations: [Locations] {
         if searchText.isEmpty {
             return allBases
@@ -37,8 +36,8 @@ struct HomeView: View {
                 }
                 
                 .searchable(text: $searchText, prompt: "Search Base")
-                    .listStyle(.grouped)
-                    .navigationBarTitle("Bases")
+                .listStyle(.grouped)
+                .navigationBarTitle("Bases")
             }
         }
     }
