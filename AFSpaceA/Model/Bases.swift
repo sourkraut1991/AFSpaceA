@@ -3,27 +3,54 @@
 //  AFSpaceA
 //
 //  Created by Ed Kraus on 2/24/23.
-//
+/// https://www.amdoren.com/api/currency.php for weather as well
 
 import Foundation
 
+
+
 struct Currency: Codable, Identifiable {
-    var id = UUID()
-    let base: String
-    let result: Double
+    let id = UUID()
+    let error: Int
+    let errorMessage: String
+    let amount: Double
     
     enum CodingKeys: String, CodingKey {
-           case base = "base"
-           case result = "result"
-        }
-
-    
-        init(base: String, result: Double) {
-            self.base = base
-            self.result = result
+        case error
+        case errorMessage = "error_message"
+        case amount
     }
 }
 
+struct Weather: Codable, Identifiable, Hashable {    
+    let id = UUID()
+    let error: Int
+    let errorMessage: String
+    let forecast: [Forecast]
+    
+    enum CodingKeys: String, CodingKey {
+        case error
+        case errorMessage = "error_message"
+        case forecast
+    }
+}
+
+// MARK: - Forecast
+struct Forecast: Codable, Hashable, Identifiable {
+    let id = UUID()
+    let date: String
+    let minF: Int
+    let maxF: Int
+    let summary, icon: String
+    
+    enum CodingKeys: String, CodingKey {
+        case date
+        case minF = "min_f"
+        case maxF = "max_f"
+        case summary, icon
+    }
+    
+}
 struct Locations: Codable, Identifiable {
     
     // Generate samples
@@ -31,7 +58,7 @@ struct Locations: Codable, Identifiable {
     
     static let sampleBase: Locations = allBases[0]
     
-//    var regionLocations = ["AMC CONUS TERMINALS", "EUCOM TERMINALS", "INDOPACOM TERMINALS", "CENTCOM TERMINALS", "SOUTHCOM TERMINALS", "NON-AMC CONUS TERMINALS", "ANG & RESERVE TERMINALS"]
+    //    var regionLocations = ["AMC CONUS TERMINALS", "EUCOM TERMINALS", "INDOPACOM TERMINALS", "CENTCOM TERMINALS", "SOUTHCOM TERMINALS", "NON-AMC CONUS TERMINALS", "ANG & RESERVE TERMINALS"]
     //// Declare what you want!
     //// You want an array of EUCOM bases.
     static var eucomBases: [Locations] {

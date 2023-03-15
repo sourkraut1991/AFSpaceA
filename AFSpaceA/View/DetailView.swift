@@ -12,14 +12,14 @@ import AVKit
 
 
 struct DetailView: View {
-    let beginningURL = "https://sourkraut1991.github.io/AFSpaceA-images/images/"
-    
+    let beginningURL = "https://sourkraut1991.github.io/AFSpaceA-images/images/" //Maximize storage
+    @Environment(\.openURL) var openURL // For hyperlinking
     var base: Locations?
     
+    @StateObject var vm = ContentModel()
     
+    let weather: Weather
     
-    
-    @Environment(\.openURL) var openURL
     var body: some View {
         
         // If no meditation set, can't display detail
@@ -37,37 +37,47 @@ struct DetailView: View {
             
         
             VStack {
-                
-                
+
                 ZStack {
                     // Background Image
                     AsyncImage(url: URL(string: beginningURL + base.image + ".jpg")!) { image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .cornerRadius(30)
+                          
                     } placeholder: {
                         Image(systemName: "photo.fill")
                     }
-                    // Base name
-                    Text(base.name)
-                        .foregroundColor(.white)
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
                 }
-                .padding(.bottom, -10)
-                
-                
+                // Base name
+                Text(base.name)
+                    .font(.title3)
+                    .fontWeight(.bold)
+//                .padding(.bottom, -10)
+             Text("Before")
+                    //TODO: Provide 3 day weather
+                ForEach(weather.forecast, id: \.self) { weather in
+                    HStack(spacing: 20) {
+                        Text(weather.date)
+                        Text(weather.summary)
+    //                    Text(weather.minF)
+                    }
+                }
+                    }
+            .onAppear(perform: vm.fetchWeather)
+                Text("After")
+            
                 List {
                     // TODO: Show Contact data of base
                     
-                    Text("DSN: " + base.DSN)
-                    Text("Commercial: " + base.Commercial)
-                    Text(emL)
+                    Text("DSN: " + base.DSN) .textSelection(.enabled)
+                    Text("Commercial: " + base.Commercial) .textSelection(.enabled)
+                    Text(emL) .textSelection(.enabled)
                     Text(webLink)
                     
                     
                 }
+                
             }
             
             
@@ -75,6 +85,5 @@ struct DetailView: View {
         
         
     }
-}
 
 

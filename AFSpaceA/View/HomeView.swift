@@ -7,13 +7,12 @@
 import SwiftUI
 
 struct HomeView: View {
-    
+    let weather: Forecast
     //    private var eucom: [Locations] = Locations.eucomBases
     //    private var conus: [Locations] = Locations.conusBases
     private var allBases: [Locations] = Locations.allBases
     
     @ObservedObject var base = ContentModel()
-    
     @State private var searchText = ""
     
     var filteredLocations: [Locations] {
@@ -30,13 +29,14 @@ struct HomeView: View {
             NavigationView {
                 List(filteredLocations) { a in                
                     NavigationLink(
-                        destination: DetailView(base: a),
+                        destination: DetailView(base: a, weather: weather),
                         label: { 
                             // Each base card in the scrollview
                             CardView(base: a)
                         })
-                }  .searchable(text: $searchText, prompt: "Search Base")
+                }
                 
+                .searchable(text: $searchText, prompt: "Search Base")
                     .listStyle(.grouped)
                     .navigationBarTitle("Bases")
             }
@@ -46,8 +46,4 @@ struct HomeView: View {
 }
 
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
+

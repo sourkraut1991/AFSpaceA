@@ -10,15 +10,13 @@ import SwiftUI
 
 struct MoneyHome: View {
     @ObservedObject var base = ContentModel()
+    var currency: [Currency]
     var body: some View {
-        List(base.currency) { currency in
-            Text("\(currency.result)")
+        VStack {
+            Form {
+                
+            }
         }
     }
 }
 
-struct MoneyHome_Previews: PreviewProvider {
-    static var previews: some View {
-        MoneyHome()
-    }
-}

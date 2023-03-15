@@ -10,20 +10,13 @@
 import SwiftUI
 import WishKit
 
-//WishKit.configure(with: "48F301E6-9B7D-46C5-90A4-401F19643817")
-
 struct RootView: View {
-
-    
-    
-    
-    init() {
-        WishKit.configure(with: "48F301E6-9B7D-46C5-90A4-401F19643817")
-    }
-    
-    
-    @ObservedObject var base = ContentModel()
+    @StateObject var vm = ContentModel()
+   @StateObject var base = ContentModel()
     @State var selectedTab: Tabs = .home
+    
+    @State var hasError = false
+   
     var body: some View {
         ZStack {
            
@@ -33,18 +26,20 @@ struct RootView: View {
                 switch selectedTab {
                 case .home:
                     HomeView()
+                        
                 case .about:
                     AboutView()
                 case .money:
-                    MoneyHome()
+                    MoneyHome(currency: [Currency].init())
                 case .wish:
                     WishListView()
                 }
                 
                 Spacer()
-                CustomTabBar(selectedTab: $selectedTab)
-            }
                 
+                    CustomTabBar(selectedTab: $selectedTab)
+                
+            }
             }
     }
 }
