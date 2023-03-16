@@ -13,12 +13,11 @@ struct HomeView: View {
     @State private var searchText = ""
     
     // Base locations
-    private var allBases: [Locations] = Locations.allBases
     var filteredLocations: [Locations] {
         if searchText.isEmpty {
-            return allBases
+            return Locations.allBases
         } else {
-            return allBases.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+            return Locations.allBases.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
         }
     }
     
@@ -28,7 +27,7 @@ struct HomeView: View {
             NavigationView {
                 List(filteredLocations) { a in                
                     NavigationLink(
-                        destination: DetailView(base: a, weather: weather),
+                        destination: DetailView(base: a),
                         label: { 
                             // Each base card in the scrollview
                             CardView(base: a)

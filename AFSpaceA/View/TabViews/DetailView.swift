@@ -15,10 +15,10 @@ struct DetailView: View {
     let beginningURL = "https://sourkraut1991.github.io/AFSpaceA-images/images/" //Maximize storage
     @Environment(\.openURL) var openURL // For hyperlinking
     var base: Locations?
-    
+    let weather: Weather
     @StateObject var vm = ContentModel()
     
-    let weather: Weather
+    
     
     var body: some View {
         
@@ -26,7 +26,7 @@ struct DetailView: View {
         if let base = base  {
             let em = "\(base.email)"
             let wb = "\(base.website)"
-           
+            
             
             var webLink: AttributedString {
                 try! AttributedString(markdown: "Website:  [\(wb)](\(wb))")
@@ -35,16 +35,16 @@ struct DetailView: View {
                 try! AttributedString(markdown: "Email:  [\(em)](\(em))")
             }
             
-        
+            
             VStack {
-
+                
                 ZStack {
                     // Background Image
                     AsyncImage(url: URL(string: beginningURL + base.image + ".jpg")!) { image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                          
+                        
                     } placeholder: {
                         Image(systemName: "photo.fill")
                     }
@@ -53,20 +53,20 @@ struct DetailView: View {
                 Text(base.name)
                     .font(.title3)
                     .fontWeight(.bold)
-//                .padding(.bottom, -10)
-             Text("Before")
-                    //TODO: Provide 3 day weather
-                ForEach(weather.forecast, id: \.self) { weather in
-                    HStack(spacing: 20) {
-                        Text(weather.date)
-                        Text(weather.summary)
-    //                    Text(weather.minF)
-                    }
-                }
-                    }
-            .onAppear(perform: vm.fetchWeather)
+                //                .padding(.bottom, -10)
+                Text("Before")
+//                TODO: Provide 3 day weather
+                                ForEach(weather.forecast, id: \.self) { weather in
+                                    HStack(spacing: 20) {
+                                        Text(weather.date)
+                                        Text(weather.summary)
+                                        Text(weather.icon)
+                                    }
+                                }
+                                    }
+                            .onAppear(perform: vm.fetchWeather)
                 Text("After")
-            
+                
                 List {
                     // TODO: Show Contact data of base
                     
@@ -85,5 +85,4 @@ struct DetailView: View {
         
         
     }
-
 

@@ -69,6 +69,16 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		683E308A29C2B99600F49771 /* TabViews */ = {
+			isa = PBXGroup;
+			children = (
+				68D0772729AB0E30005E7474 /* DetailView.swift */,
+				68001FB629B024C400193FE3 /* AboutView.swift */,
+				68BEF5B329B2C76D0077762F /* HomeView.swift */,
+			);
+			path = TabViews;
+			sourceTree = "<group>";
+		};
 		6848CFA829A69AF8006759E8 = {
 			isa = PBXGroup;
 			children = (
@@ -110,15 +120,13 @@
 		6848CFC229A69B0D006759E8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				683E308A29C2B99600F49771 /* TabViews */,
 				6872BF3829C0B2010074455D /* Weather */,
 				688CE74629B940A400C77F29 /* Exchange */,
 				6848CFB629A69AF8006759E8 /* RootView.swift */,
 				68001FB829B0251E00193FE3 /* Onboarding */,
 				68D0772529AB0AC5005E7474 /* CardView.swift */,
 				68B391EA29A874B800069480 /* CustomTabBar.swift */,
-				68D0772729AB0E30005E7474 /* DetailView.swift */,
-				68001FB629B024C400193FE3 /* AboutView.swift */,
-				68BEF5B329B2C76D0077762F /* HomeView.swift */,
 				68F3694029B9AD8800B7C10D /* WishListView.swift */,
 			);
 			path = View;
