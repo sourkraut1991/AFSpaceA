@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct WeatherView: View {
-    let weather: Weather
+    @State var vm = ContentModel()
     var body: some View {
         VStack {
-            ForEach(weather.forecast, id: \.self) { weather in
+            ForEach(vm.forecast, id: \.self) { weather in
                 HStack(spacing: 20) {
                     Text(weather.date)
                     Text(weather.summary)
+
+                
                     // Text(weather.minF)
                     // Text(weather.maxF)
                 }

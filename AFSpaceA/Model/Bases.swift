@@ -51,14 +51,7 @@ struct Forecast: Codable, Hashable, Identifiable {
         case maxF = "max_f"
         case summary, icon
     }
-    //    init(date: String, minF: Int, maxF: Int, summary:String, icon: String) {
-    //        self.date = date
-    //        self.icon = icon
-    //        self.maxF = maxF
-    //        self.minF = minF
-    //        self.summary = summary
-    //
-    //    }
+     
 }
 struct Locations: Codable, Identifiable {
     // Generate samples

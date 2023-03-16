@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    let weather: Forecast
+    
     
     //For Search Bar
     @State private var searchText = ""
@@ -23,24 +23,24 @@ struct HomeView: View {
     
     
     var body: some View {
-        VStack {
-            NavigationView {
-                List(filteredLocations) { a in                
-                    NavigationLink(
-                        destination: DetailView(base: a),
-                        label: { 
-                            // Each base card in the scrollview
-                            CardView(base: a)
-                        })
-                }
-                
-                .searchable(text: $searchText, prompt: "Search Base")
-                .listStyle(.grouped)
-                .navigationBarTitle("Bases")
+        
+        NavigationView {
+            List(filteredLocations) { a in
+                NavigationLink(
+                    destination: DetailView(base: a),
+                    label: {
+                        // Each base card in the scrollview
+                        CardView(base: a)
+                    })
             }
         }
+        
+        .searchable(text: $searchText, prompt: "Search Base")
+        .listStyle(.grouped)
+        .navigationBarTitle("Bases")
+        
+        
     }
-    
 }
 
 

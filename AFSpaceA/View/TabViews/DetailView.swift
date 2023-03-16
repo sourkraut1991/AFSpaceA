@@ -15,11 +15,9 @@ struct DetailView: View {
     let beginningURL = "https://sourkraut1991.github.io/AFSpaceA-images/images/" //Maximize storage
     @Environment(\.openURL) var openURL // For hyperlinking
     var base: Locations?
-    let weather: Weather
+    
     @StateObject var vm = ContentModel()
-    
-    
-    
+
     var body: some View {
         
         // If no meditation set, can't display detail
@@ -55,16 +53,7 @@ struct DetailView: View {
                     .fontWeight(.bold)
                 //                .padding(.bottom, -10)
                 Text("Before")
-//                TODO: Provide 3 day weather
-                                ForEach(weather.forecast, id: \.self) { weather in
-                                    HStack(spacing: 20) {
-                                        Text(weather.date)
-                                        Text(weather.summary)
-                                        Text(weather.icon)
-                                    }
-                                }
-                                    }
-                            .onAppear(perform: vm.fetchWeather)
+//                Weather()
                 Text("After")
                 
                 List {
@@ -85,4 +74,4 @@ struct DetailView: View {
         
         
     }
-
+}

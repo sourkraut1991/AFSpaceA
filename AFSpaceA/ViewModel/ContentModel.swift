@@ -10,6 +10,7 @@ import SwiftUI
 
 class ContentModel: ObservableObject {
     @Published var weather = [Weather]()
+    @Published var forecast = [Forecast]()
     @Published var bases = [Locations]()
     @Published var currency = [Currency]()
     
@@ -19,7 +20,7 @@ class ContentModel: ObservableObject {
         // Get bases from local JSON
         self.bases = getLocalJson()
         // Download remote json file and parse data
-        fetchWeather()
+      fetchWeather()
     }
     
     func getLocalJson() -> [Locations] {
@@ -69,6 +70,7 @@ class ContentModel: ObservableObject {
                     let decoder = JSONDecoder()
                     let weather = try decoder.decode(Weather.self, from: data!)
                     print(weather)
+                    
                 }
                 catch {
                     print("Error in json parsing")
