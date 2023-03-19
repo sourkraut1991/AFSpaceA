@@ -26,7 +26,7 @@ struct RootView: View {
                 case .about:
                     AboutView()
                 case .money:
-                    MoneyHome(currency: [Currency].init())
+                    MoneyHome()
                 case .wish:
                     WishListView()
                 }
@@ -37,5 +37,10 @@ struct RootView: View {
                 
             }
         }
+    }
+}
+struct RootView_Previews: PreviewProvider {
+    static var previews: some View {
+        RootView()
     }
 }

@@ -52,9 +52,9 @@ struct DetailView: View {
                     .font(.title3)
                     .fontWeight(.bold)
                 //                .padding(.bottom, -10)
-                Text("Before")
-//                Weather()
-                Text("After")
+              
+//                WeatherView()
+                
                 
                 List {
                     // TODO: Show Contact data of base
@@ -73,5 +73,11 @@ struct DetailView: View {
         }
         
         
+    }
+}
+
+struct DetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        DetailView()
     }
 }

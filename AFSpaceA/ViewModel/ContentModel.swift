@@ -9,8 +9,7 @@ import Foundation
 import SwiftUI
 
 class ContentModel: ObservableObject {
-    @Published var weather = [Weather]()
-    @Published var forecast = [Forecast]()
+    @Published var weather: Weather?
     @Published var bases = [Locations]()
     @Published var currency = [Currency]()
     
@@ -20,7 +19,7 @@ class ContentModel: ObservableObject {
         // Get bases from local JSON
         self.bases = getLocalJson()
         // Download remote json file and parse data
-      fetchWeather()
+        fetchWeather()
     }
     
     func getLocalJson() -> [Locations] {
@@ -47,82 +46,57 @@ class ContentModel: ObservableObject {
         
     }
     let beginningURL = "https://sourkraut1991.github.io/AFSpaceA-images/images/"
-   
     
-    //Handle Errors with these 2 var's
-    @Published var hasError = false
-    @Published var error : UserError?
     
     func fetchWeather() {
-        let urlString = "https://www.amdoren.com/api/weather.php?api_key=AhiqGphbmnbH2hTqXmd2n68skL8p8j&lat=40.7127837&lon=-74.0059413"
-        let url = URL(string: urlString)
-        
-        guard url != nil else {
+        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=London&appid=6707c62d4b0fa031d94a09f02babb951&units=metric") else {
             return
         }
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: url!) { data, response, error in
-            
-            // Check for errors
-            if error == nil && data != nil {
-                do {
-                    // Parse JSON
-                    let decoder = JSONDecoder()
-                    let weather = try decoder.decode(Weather.self, from: data!)
-                    print(weather)
-                    
-                }
-                catch {
-                    print("Error in json parsing")
-                }
-            }
-        }
-            // Make the API Call
-            dataTask.resume()
-    }
-    // Beginning to get currency
-    func fetchStocks() {
-        let urlString = "https://www.amdoren.com/api/currency.php?api_key=AhiqGphbmnbH2hTqXmd2n68skL8p8j&from=USD&to=EUR"
-        let url = URL(string: urlString)
         
-        guard url != nil else {
-            return
-        }
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: url!) { data, response, error in
-            
-            // Check for errors
-            if error == nil && data != nil {
-                do {
-                    // Parse JSON
-                    let decoder = JSONDecoder()
-                    let currency = try decoder.decode(Currency.self, from: data!)
-                    print(currency)
-                }
-                catch {
-                    print("Error in json parsing")
-                }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else {
+                return
             }
-        }
-            // Make the API Call
-            dataTask.resume()
-    }
-} // End of Class
-
-//From tunsdev https://www.youtube.com/watch?v=r3O90QGKv98
-extension ContentModel {
-    enum UserError: LocalizedError {
-        case custom(error: Error)
-        case failedToDecode
+            
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            
+            do {
+                let decodedData = try decoder.decode(Weather.self, from: data)
+                DispatchQueue.main.async {
+                    self.weather = decodedData
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }.resume()
         
-        var errorDescription: String? {
-            switch self {
-            case .failedToDecode:
-                return "Failed to decode response"
-            case .custom(let error):
-                return error.localizedDescription
+        // Beginning to get currency
+        func fetchStocks() {
+            let urlString = "https://v6.exchangerate-api.com/v6/3af64b8ec60e3e731a5c3068/latest/USD"
+            let url = URL(string: urlString)
+            
+            guard url != nil else {
+                return
+            }
+            let session = URLSession.shared
+            let dataTask = session.dataTask(with: url!) { data, response, error in
                 
+                // Check for errors
+                if error == nil && data != nil {
+                    do {
+                        // Parse JSON
+                        let decoder = JSONDecoder()
+                        let currency = try decoder.decode(Currency.self, from: data!)
+                        print(currency)
+                    }
+                    catch {
+                        print("Error in json parsing")
+                    }
+                }
             }
+            // Make the API Call
+            dataTask.resume()
         }
-    }
+    } // End of Class
 }

@@ -3,56 +3,43 @@
 //  AFSpaceA
 //
 //  Created by Ed Kraus on 2/24/23.
-/// https://www.amdoren.com/api/currency.php for weather as well
+// https://v6.exchangerate-api.com/v6/3af64b8ec60e3e731a5c3068/latest/USD
 
 import Foundation
 
 
 
-struct Currency: Codable, Identifiable {
-    let id = UUID()
-    let error: Int
-    let errorMessage: String
-    let amount: Double
-    
+// MARK: - Currency
+struct Currency: Codable {
+    let result: String
+    let documentation, termsOfUse: String
+    let timeLastUpdateUnix: Int
+    let timeLastUpdateUTC: String
+    let timeNextUpdateUnix: Int
+    let timeNextUpdateUTC, baseCode: String
+    let conversionRates: [String: Double]
+
     enum CodingKeys: String, CodingKey {
-        case error
-        case errorMessage = "error_message"
-        case amount
+        case result, documentation
+        case termsOfUse = "terms_of_use"
+        case timeLastUpdateUnix = "time_last_update_unix"
+        case timeLastUpdateUTC = "time_last_update_utc"
+        case timeNextUpdateUnix = "time_next_update_unix"
+        case timeNextUpdateUTC = "time_next_update_utc"
+        case baseCode = "base_code"
+        case conversionRates = "conversion_rates"
     }
 }
 
-struct Weather: Codable, Identifiable, Hashable {    
-    let id = UUID()
-    let error: Int?
-    let errorMessage: String?
-    let forecast: [Forecast]
-    
-    enum CodingKeys: String, CodingKey {
-        case error
-        case errorMessage = "error_message"
-        case forecast
-    }
+struct Weather: Codable {
+    var name: String
+    var main: Main
 }
 
-// MARK: - Forecast
-struct Forecast: Codable, Hashable, Identifiable {
-    
-    let id = UUID()
-    let date: String
-    let minF: Int
-    let maxF: Int
-    let summary: String
-    let icon: String
-    
-    enum CodingKeys: String, CodingKey {
-        case date
-        case minF = "min_f"
-        case maxF = "max_f"
-        case summary, icon
-    }
-     
+struct Main: Codable {
+    var temp: Double
 }
+
 struct Locations: Codable, Identifiable {
     // Generate samples
     static let allBases: [Locations] = Bundle.main.decode(file: "bases.json")
