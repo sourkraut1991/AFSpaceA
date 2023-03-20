@@ -15,7 +15,7 @@ struct MoneyHome: View {
     @State private var selectedCurrency1 = "USD"
     @State private var selectedCurrency2 = "EUR"
     @State private var conversionRate = 0.9
-    
+    @State private var currentRate = 0
     let currencySymbols = ["USD", "EUR", "GBP", "JPY"]
     
     var convertedAmount: Double {
@@ -35,7 +35,7 @@ struct MoneyHome: View {
                                     Text($0)
                                 }
                             }
-                            .pickerStyle(SegmentedPickerStyle())
+                            .pickerStyle(.automatic)
                         }
                         
                         Section(header: Text("Convert to")) {
@@ -44,14 +44,16 @@ struct MoneyHome: View {
                                     Text($0)
                                 }
                             }
-                            .pickerStyle(SegmentedPickerStyle())
+                            .pickerStyle(.automatic)
                         }
                         
                         Section(header: Text("Result")) {
                             Text("\(convertedAmount, specifier: "%.2f") \(selectedCurrency2)")
                         }
+                        
                     }
                     .navigationBarTitle("Currency Converter")
+            
                 }
             }
        

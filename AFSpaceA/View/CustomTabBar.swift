@@ -19,91 +19,42 @@ struct CustomTabBar: View {
     @Environment(\.openURL) var openURL
     
     var body: some View {
-        
-        HStack {
+        TabView(selection: $selectedTab){
+            ZStack{
+                RoundedRectangle(cornerRadius: 10)
+            HomeView()
+            }
+            .tabItem({
+                Text("Home")
+                Image(systemName: "house")
+            })
+            .tag(0)
             
-            Spacer()
-            Button {
-                //Button's Action
-                selectedTab = .home
-            } label: {
-                
-                VStack (alignment: .center, spacing: 4) {
-                    Image(systemName: "house")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 32, height: 32)
-                    
-                    Text("Home")
-                }
-                
-            }
-            Spacer()
+            ZStack{
+                RoundedRectangle(cornerRadius: 10)
+//                openURL(URL(string: "https://www.amc.af.mil/AMC-Travel-Site/AMC-Space-Available-Travel-Page/Space-Available-Email-Sign-up-Form/")!)
+            }.tabItem({
+                Text("Sign-Up")
+                Image(systemName: "link.circle")
+            })
+            .tag(2)
+            ZStack{
+                RoundedRectangle(cornerRadius: 10)
+                   AboutView()
+            }.tabItem({
+                Text("About")
+                Image(systemName: "info.circle")
+            })
+            .tag(2)
+            ZStack{
+                RoundedRectangle(cornerRadius: 10)
+                  WishListView()
+            }.tabItem({
+                Text("Wish List")
+                Image(systemName: "square.and.pencil.circle")
+            })
+            .tag(3)
             
-            
-            VStack (alignment: .center, spacing: 4) {
-                Button {
-                    //Button's Action
-                    openURL(URL(string: "https://www.amc.af.mil/AMC-Travel-Site/AMC-Space-Available-Travel-Page/Space-Available-Email-Sign-up-Form/")!)
-                } label: {
-                    
-                    VStack (alignment: .center, spacing: 4) {
-                        Image(systemName: "globe")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 32, height: 32)
-                        Text("Sign Up")
-                    }
-                }
-            }
-            Spacer()
-            Button {
-                selectedTab = .about
-            } label: {
-                
-                VStack (alignment: .center, spacing: 4) {
-                    Image(systemName: "info.circle")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 32, height: 32)
-                    
-                    Text("About")
-                }
-            }
-                Spacer()
-                Button {
-                    selectedTab = .money
-                } label: {
-                    
-                    VStack (alignment: .center, spacing: 4) {
-                        Image(systemName: "coloncurrencysign.circle")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 32, height: 32)
-                        
-                        Text("Converter")
-                    }
-            }
-            Spacer()
-            Button {
-                selectedTab = .wish
-            } label: {
-                
-                VStack (alignment: .center, spacing: 4) {
-                    Image(systemName: "i.circle")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 32, height: 32)
-                    
-                    Text("Wish's")
-                }
+           
         }
-      
-        }
-        .padding(.top)
-        .background(Color.gray)
-    }
-    
-}
-
-
+    }}
