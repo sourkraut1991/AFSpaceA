@@ -70,7 +70,7 @@ class ContentModel: ObservableObject {
                 print(error.localizedDescription)
             }
         }.resume()
-        
+    }
         // Beginning to get currency
         func fetchStocks() {
             let urlString = "https://v6.exchangerate-api.com/v6/3af64b8ec60e3e731a5c3068/latest/USD"
@@ -99,4 +99,4 @@ class ContentModel: ObservableObject {
             dataTask.resume()
         }
     } // End of Class
-}
+

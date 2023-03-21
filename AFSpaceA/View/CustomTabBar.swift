@@ -18,6 +18,7 @@ struct CustomTabBar: View {
     @Binding var selectedTab: Tabs
     @Environment(\.openURL) var openURL
     
+    
     var body: some View {
         TabView(selection: $selectedTab){
             ZStack{
@@ -29,10 +30,13 @@ struct CustomTabBar: View {
                 Image(systemName: "house")
             })
             .tag(0)
-            
+            // If no meditation set, can't display detail
+
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
-//                openURL(URL(string: "https://www.amc.af.mil/AMC-Travel-Site/AMC-Space-Available-Travel-Page/Space-Available-Email-Sign-up-Form/")!)
+              
+                Link("",
+                      destination: URL(string: "https://www.amc.af.mil/AMC-Travel-Site/AMC-Space-Available-Travel-Page/Space-Available-Email-Sign-up-Form/")!)
             }.tabItem({
                 Text("Sign-Up")
                 Image(systemName: "link.circle")

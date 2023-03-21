@@ -18,6 +18,7 @@ struct Currency: Codable {
         case result
         case conversionRates = "conversion_rates"
     }
+  
 }
 
 struct Weather: Codable {

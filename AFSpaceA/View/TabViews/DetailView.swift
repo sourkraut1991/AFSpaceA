@@ -21,17 +21,14 @@ struct DetailView: View {
     var body: some View {
         
         // If no meditation set, can't display detail
-        if let base = base  {
-            let em = "\(base.email)"
+        if let base = base  {        
             let wb = "\(base.website)"
             
             
             var webLink: AttributedString {
                 try! AttributedString(markdown: "Website:  [\(wb)](\(wb))")
             }
-            var emL: AttributedString {
-                try! AttributedString(markdown: "Email:  [\(em)](\(em))")
-            }
+        
             
             
             VStack {
@@ -61,7 +58,7 @@ struct DetailView: View {
                     
                     Text("DSN: " + base.DSN) .textSelection(.enabled)
                     Text("Commercial: " + base.Commercial) .textSelection(.enabled)
-                    Text(emL) .textSelection(.enabled)
+                    Text("Email: " + base.email) .textSelection(.enabled)
                     Text(webLink)
                     
                     
