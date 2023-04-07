@@ -21,6 +21,11 @@
 		68B391EB29A874B800069480 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B391EA29A874B800069480 /* CustomTabBar.swift */; };
 		68B391ED29A8769600069480 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B391EC29A8769600069480 /* ContentModel.swift */; };
 		68BEF5B429B2C76D0077762F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BEF5B329B2C76D0077762F /* HomeView.swift */; };
+		68C766CE29D7567400D1F5FA /* WebURL in Frameworks */ = {isa = PBXBuildFile; productRef = 68C766CD29D7567400D1F5FA /* WebURL */; };
+		68C766D029D7567400D1F5FA /* WebURLFoundationExtras in Frameworks */ = {isa = PBXBuildFile; productRef = 68C766CF29D7567400D1F5FA /* WebURLFoundationExtras */; };
+		68C766D229D7567400D1F5FA /* WebURLSystemExtras in Frameworks */ = {isa = PBXBuildFile; productRef = 68C766D129D7567400D1F5FA /* WebURLSystemExtras */; };
+		68C766D429D7567400D1F5FA /* _WebURLIDNA in Frameworks */ = {isa = PBXBuildFile; productRef = 68C766D329D7567400D1F5FA /* _WebURLIDNA */; };
+		68C766D729D758C000D1F5FA /* AsyncHTTPClient in Frameworks */ = {isa = PBXBuildFile; productRef = 68C766D629D758C000D1F5FA /* AsyncHTTPClient */; };
 		68D0772629AB0AC5005E7474 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D0772529AB0AC5005E7474 /* CardView.swift */; };
 		68D0772829AB0E30005E7474 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D0772729AB0E30005E7474 /* DetailView.swift */; };
 		68F3693F29B9AD6B00B7C10D /* WishKit in Frameworks */ = {isa = PBXBuildFile; productRef = 68F3693E29B9AD6B00B7C10D /* WishKit */; };
@@ -54,6 +59,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				68F3693F29B9AD6B00B7C10D /* WishKit in Frameworks */,
+				68C766CE29D7567400D1F5FA /* WebURL in Frameworks */,
+				68C766D429D7567400D1F5FA /* _WebURLIDNA in Frameworks */,
+				68C766D029D7567400D1F5FA /* WebURLFoundationExtras in Frameworks */,
+				68C766D729D758C000D1F5FA /* AsyncHTTPClient in Frameworks */,
+				68C766D229D7567400D1F5FA /* WebURLSystemExtras in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +200,11 @@
 			name = AFSpaceA;
 			packageProductDependencies = (
 				68F3693E29B9AD6B00B7C10D /* WishKit */,
+				68C766CD29D7567400D1F5FA /* WebURL */,
+				68C766CF29D7567400D1F5FA /* WebURLFoundationExtras */,
+				68C766D129D7567400D1F5FA /* WebURLSystemExtras */,
+				68C766D329D7567400D1F5FA /* _WebURLIDNA */,
+				68C766D629D758C000D1F5FA /* AsyncHTTPClient */,
 			);
 			productName = AFSpaceA;
 			productReference = 6848CFB129A69AF8006759E8 /* AFSpaceA.app */;
@@ -221,6 +236,8 @@
 			mainGroup = 6848CFA829A69AF8006759E8;
 			packageReferences = (
 				68F3693D29B9AD6B00B7C10D /* XCRemoteSwiftPackageReference "wishkit-ios" */,
+				68C766CC29D7567400D1F5FA /* XCRemoteSwiftPackageReference "swift-url" */,
+				68C766D529D758C000D1F5FA /* XCRemoteSwiftPackageReference "async-http-client" */,
 			);
 			productRefGroup = 6848CFB229A69AF8006759E8 /* Products */;
 			projectDirPath = "";
@@ -465,6 +482,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		68C766CC29D7567400D1F5FA /* XCRemoteSwiftPackageReference "swift-url" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/karwa/swift-url";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
+		68C766D529D758C000D1F5FA /* XCRemoteSwiftPackageReference "async-http-client" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swift-server/async-http-client.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		68F3693D29B9AD6B00B7C10D /* XCRemoteSwiftPackageReference "wishkit-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/wishkit/wishkit-ios.git";
@@ -476,6 +509,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		68C766CD29D7567400D1F5FA /* WebURL */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68C766CC29D7567400D1F5FA /* XCRemoteSwiftPackageReference "swift-url" */;
+			productName = WebURL;
+		};
+		68C766CF29D7567400D1F5FA /* WebURLFoundationExtras */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68C766CC29D7567400D1F5FA /* XCRemoteSwiftPackageReference "swift-url" */;
+			productName = WebURLFoundationExtras;
+		};
+		68C766D129D7567400D1F5FA /* WebURLSystemExtras */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68C766CC29D7567400D1F5FA /* XCRemoteSwiftPackageReference "swift-url" */;
+			productName = WebURLSystemExtras;
+		};
+		68C766D329D7567400D1F5FA /* _WebURLIDNA */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68C766CC29D7567400D1F5FA /* XCRemoteSwiftPackageReference "swift-url" */;
+			productName = _WebURLIDNA;
+		};
+		68C766D629D758C000D1F5FA /* AsyncHTTPClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68C766D529D758C000D1F5FA /* XCRemoteSwiftPackageReference "async-http-client" */;
+			productName = AsyncHTTPClient;
+		};
 		68F3693E29B9AD6B00B7C10D /* WishKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 68F3693D29B9AD6B00B7C10D /* XCRemoteSwiftPackageReference "wishkit-ios" */;

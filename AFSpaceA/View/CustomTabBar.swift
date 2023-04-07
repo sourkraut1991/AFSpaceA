@@ -6,6 +6,10 @@
 //
 
 import SwiftUI
+import WebURL
+import AsyncHTTPClient
+
+
 
 enum Tabs: Int {
     case home = 0
@@ -18,7 +22,7 @@ struct CustomTabBar: View {
     @Binding var selectedTab: Tabs
     @Environment(\.openURL) var openURL
     
-    
+   
     var body: some View {
         TabView(selection: $selectedTab){
             ZStack{
@@ -34,22 +38,23 @@ struct CustomTabBar: View {
 
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
+                
+                      
               
-                Link("",
-                      destination: URL(string: "https://www.amc.af.mil/AMC-Travel-Site/AMC-Space-Available-Travel-Page/Space-Available-Email-Sign-up-Form/")!)
+                Text("https://www.amc.af.mil/AMC-Travel-Site/AMC-Space-Available-Travel-Page/Space-Available-Email-Sign-up-Form/")
             }.tabItem({
                 Text("Sign-Up")
                 Image(systemName: "link.circle")
             })
             .tag(2)
-            ZStack{
-                RoundedRectangle(cornerRadius: 10)
-                   AboutView()
-            }.tabItem({
-                Text("About")
-                Image(systemName: "info.circle")
-            })
-            .tag(2)
+//            ZStack{
+//                RoundedRectangle(cornerRadius: 10)
+//                   AboutView()
+//            }.tabItem({
+//                Text("About")
+//                Image(systemName: "info.circle")
+//            })
+//            .tag(2)
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
                   WishListView()
